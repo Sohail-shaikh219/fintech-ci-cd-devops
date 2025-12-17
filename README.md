@@ -41,7 +41,17 @@ Application Live on Port 8081
 - Build and deployment status  
 - CI/CD pipeline visualization  
 - Environment separation (DEV / STAGING / PROD)  
-- Code quality and security awareness indicators  
+- Code quality and security awareness indicators 
+
+---
+
+## 📸 Project Output (Dashboard)
+
+Below is the live output of the Fintech DevOps Dashboard deployed using Jenkins and Docker:
+
+![Fintech DevOps Dashboard](screenshots/Dashboard.png)
+
+---
 
 ---
 
