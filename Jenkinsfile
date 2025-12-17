@@ -9,14 +9,14 @@ pipeline {
             }
         }
 
-        stage('Stop Old Container') {
-            steps {
-                sh '''
-                docker stop fintech || true
-                docker rm fintech || true
-                '''
-            }
-        }
+        stage('Stop Old Containers') {
+    steps {
+        sh '''
+        docker ps -q --filter "name=fintech" | xargs -r docker stop
+        docker ps -aq --filter "name=fintech" | xargs -r docker rm
+        '''
+    }
+}
 
         stage('Deploy Application') {
             steps {
