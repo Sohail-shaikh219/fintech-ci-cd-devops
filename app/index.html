@@ -1,73 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Fintech DevOps Dashboard</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-        }
-
-        header {
-            background: #0a2540;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            padding: 30px;
-        }
-
-        .cards {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 250px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: #0a2540;
-        }
-
-        .status {
-            color: green;
-            font-weight: bold;
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #777;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Fintech DevOps Dashboard</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f9;
+}
+header {
+    background: linear-gradient(90deg, #0a2540, #0f3c6e);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+.container {
+    padding: 30px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.card h3 {
+    margin-top: 0;
+    color: #0a2540;
+}
+.status-green {
+    color: green;
+    font-weight: bold;
+}
+.status-blue {
+    color: #007bff;
+    font-weight: bold;
+}
+.pipeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pipeline span {
+    background: #eaf1f8;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+footer {
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    color: #555;
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Fintech DevOps Dashboard</h1>
-        <p>CI/CD Pipeline | Docker | Jenkins | AWS</p>
-    </header>
+<header>
+    <h1>Fintech DevOps Dashboard</h1>
+    <p>CI/CD Pipeline • Docker • Jenkins • AWS</p>
+</header>
 
-    <div class="container">
-        <div class="cards">
-            <div class="card">
-                <h3>Application Status</h3>
-                <p class="status">Running ✔</p>
-            </div>
+<div class="container">
 
-            <div class="card">
-                <h3>Build Status</h3>
-                <p class="s
+<!-- STATS -->
+<div class="grid">
+    <div class="card">
+        <h3>Application Status</h3>
+        <p class="status-green">Running ✔</p>
+    </div>
+
+    <div class="card">
+        <h3>Last Build</h3>
+        <p class="status-green">SUCCESS</p>
+        <p>Triggered by GitHub</p>
+    </div>
+
+    <div class="card">
+        <h3>Deployment</h3>
+        <p>Docker Container</p>
+        <p class="status-blue">Auto Deployed</p>
+    </div>
+
+    <div class="card">
+        <h3>Server</h3>
+        <p>Linux (Ubuntu)</p>
+        <p>Port: 8081</p>
+    </div>
+</div>
+
+<br>
+
+<!-- PIPELINE -->
+<div class="card">
+    <h3>CI/CD Pipeline Flow</h3>
+    <div class="pipeline">
+        <span>GitHub</span> ➜
+        <span>Jenkins</span> ➜
+        <span>Docker Build</span> ➜
+        <span>Deploy</span>
+    </div>
+</div>
+
+<br>
+
+<!-- ENVIRONMENTS -->
+<div class="grid">
+    <div class="card">
+        <h3>DEV Environment</h3>
+        <p class="status-green">Active</p>
